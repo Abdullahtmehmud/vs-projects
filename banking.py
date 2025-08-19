@@ -10,6 +10,7 @@ balance = 0
 history = []
 
 def ask_again():
+   time.sleep(1.5)
    print("Do you want to make any other transaction: ")
    choice = input("Yes/y or No/n: ")
 
@@ -21,24 +22,20 @@ def ask_again():
         print("Thank you for chosing us.")
    else:
       print("Invalid input")
-
 def previous_transactions():
    print(history)
-
 def cash_withdrawal():
    pass
-
 def transfer_cash():
    pass
-
 def cash_deposit(): 
    global balance
    amount = int(input("Enter the amount you want to deposit in your account: "))
    balance += amount
    date_time = datetime.now().strftime("%d-%m-%Y %H-%M-%S")
    history.append(f"{date_time} - Deposited{amount}, balance: {balance}")
-   print(F"You've deposited amount: {amount}, Your new balance is: {balance}")
-   
+   time.sleep(1)
+   print(F"You've deposited amount: {amount}, Your new balance is: {balance}")   
 def balance_inquiry():
    global balance
    print("You're total balance is:", balance)
@@ -55,7 +52,6 @@ def exit():
         interface_menu()
     else:
       print("Invalid Input")     
-
 def interface_menu():
 
     for i in range(1):
@@ -96,7 +92,6 @@ def interface_menu():
             break
         time.sleep(2.5)
         ask_again()
-
 def startup():
     while True:
      
@@ -114,5 +109,4 @@ def startup():
          break
      elif pin not in [1, 2, 3, 4, 5, 6, 7, 8, 9]:
            print("Invalid pin. please try again!".upper())
-
 startup()
