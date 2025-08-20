@@ -3,10 +3,10 @@ import time
 # Making Shopping cart
 
 cart = []
-bruh = True
+first_time = True
 
 while True:
-   if not bruh:
+   if not first_time:
       time.sleep(1.5)
    else:
       bruh =False
@@ -20,23 +20,23 @@ while True:
        cart.append(item)
        print(f'{item} has been added to your cart.')
    elif choice == '2':
+         time.sleep(1)
          if cart:
             print("Your cart:")
             for i, item in enumerate(cart, 1):
                 print(f"{i}. {item}")
          else:
-            print("Your cart is empty.")
+            print("Your cart is empty. add items to fill cart")
    elif choice == '3':
-       print(cart)
-       item = input("select item to remove: ")
-       cart.remove(item)
-       print(f"{item} has been removed from your cart")
+               
+               
+               item = input("select item to remove: ")
+               cart.remove(item)
+               print(f"{item} has been removed from your cart")
+         
+          print(f"no such {item} added before")
+       
    else:
-      print("no such item added before")
-      
-   if choice == '4':
-      print('Thank you for shopping with us!')
-      break
-   else:
-    print("Invalid choice. please chose again")
-    
+       print("Invalid option. Please chose the right option")
+
+   
